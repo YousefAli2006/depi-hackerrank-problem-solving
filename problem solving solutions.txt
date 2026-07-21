@@ -189,3 +189,21 @@ a=map(int,input().split(" "))
 b=map(int,input().split(" "))
 print(*product(a,b))
 ============================================================================
+Hackerrank Prepare->Python->Calendar Module
+(https://www.hackerrank.com/challenges/calendar-module/problem?isFullScreen=true)
+**************************************
+import calendar
+date=list(map(int,input().split(" ")))
+print(calendar.day_name[calendar.weekday(date[2],date[0],date[1])].upper())
+============================================================================
+Hackerrank Prepare->Python->Exceptions
+(https://www.hackerrank.com/challenges/exceptions/problem?isFullScreen=true)
+**************************************
+t=int(input())
+for _ in range(t):
+    a,b=input().split(" ")
+    try:
+        print(int(a)//int(b))
+    except (ZeroDivisionError,ValueError) as e:
+        print(f"Error Code: {e}")
+============================================================================
