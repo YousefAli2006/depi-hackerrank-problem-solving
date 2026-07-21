@@ -1,0 +1,191 @@
+Hackerrank Prepare->Python->Python If-Else
+(https://www.hackerrank.com/challenges/py-if-else/problem?isFullScreen=true)
+**************************************
+n=int(input())
+if n%2!=0:
+    print("Weird")
+else:
+    if 2<=n<=5:
+        print("Not Weird")
+    elif 6<=n<=20:
+        print("Weird")
+    else:
+        print("Not Weird")
+============================================================================
+Hackerrank Prepare->Python->Write a function
+(https://www.hackerrank.com/challenges/write-a-function/problem?isFullScreen=true)
+**************************************
+def is_leap(year):
+    leap = False
+    if year%4==0:
+        leap=True
+    if year%100==0:
+        leap=False
+    if year%400==0:
+        leap=True
+    return leap
+
+year = int(input())
+print(is_leap(year))
+============================================================================
+Hackerrank Prepare->Python->Print Function
+(https://www.hackerrank.com/challenges/python-print/problem?isFullScreen=true)
+**************************************
+n=int(input())
+print(*list(range(1,n+1)),sep="")
+============================================================================
+Hackerrank Prepare->Python->List Comprehensions
+(https://www.hackerrank.com/challenges/list-comprehensions/problem?isFullScreen=true)
+**************************************
+x=int(input())
+y=int(input())
+z=int(input())
+n=int(input())
+print([[i,j,k] for i in range(x+1) for j in range(y+1) for k in range(z+1) if sum([i,j,k])!=n])
+============================================================================
+Hackerrank Prepare->Python->Find the Runner-Up Score!
+(https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/problem?isFullScreen=true)
+**************************************
+n=int(input())
+my_list=list(map(int,input().split()))
+print(max([x for x in my_list if x!=max(my_list)]))
+============================================================================
+Hackerrank Prepare->Python->Nested Lists
+(https://www.hackerrank.com/challenges/nested-list/problem?isFullScreen=true)
+**************************************
+records=[]
+for _ in range(int(input())):
+    name=input()
+    score=float(input())
+    records.append([name,score])
+scores=[record[1] for record in records]
+second_min_score=min([score for score in scores if score!=min(scores)])
+names=[]
+for record in records:
+    if record[1]==second_min_score:
+        names.append(record[0])
+names.sort()
+print(*names,sep="\n")
+============================================================================
+Hackerrank Prepare->Python->Finding the percentage
+(https://www.hackerrank.com/challenges/finding-the-percentage/problem?isFullScreen=true)
+**************************************
+records={}
+for _ in range(int(input())):
+    record=input().split(" ")
+    name=record[0]
+    marks=map(float,record[1:4])
+    records.update({name:marks})
+query_name=input()
+print(f"{sum(records[query_name])/3:.2f}")
+============================================================================ 
+Hackerrank Prepare->Python->Lists
+(https://www.hackerrank.com/challenges/python-lists/problem?isFullScreen=true)
+**************************************
+my_list=[]
+for _ in range(int(input())):
+    command=input().split(" ")
+    if command[0]=="insert":
+        my_list.insert(int(command[1]),int(command[2]))
+    elif command[0]=="print":
+        print(my_list)
+    elif command[0]=="remove":
+        my_list.remove(int(command[1]))
+    elif command[0]=="append":
+        my_list.append(int(command[1]))
+    elif command[0]=="sort":
+        my_list.sort()
+    elif command[0]=="pop":
+        my_list.pop()
+    elif command[0]=="reverse":
+        my_list.reverse()
+============================================================================
+Hackerrank Prepare->Python->sWAP cASE
+(https://www.hackerrank.com/challenges/swap-case/problem?isFullScreen=true)
+**************************************
+def swap_case(s):
+    s_new=""
+    for character in s:
+        if character==character.upper():
+            s_new+=character.lower()
+        else:
+            s_new+=character.upper()
+    return s_new
+
+if __name__ == '__main__':
+    s = input()
+    result = swap_case(s)
+    print(result)
+============================================================================
+Hackerrank Prepare->Python->String Split and Join
+(https://www.hackerrank.com/challenges/python-string-split-and-join/problem?isFullScreen=true)
+**************************************
+def split_and_join(line):
+    line=line.split(" ")
+    line="-".join(line)
+    return line
+
+if __name__ == '__main__':
+    line = input()
+    result = split_and_join(line)
+    print(result)
+============================================================================
+Hackerrank Prepare->Python->Mutations
+(https://www.hackerrank.com/challenges/python-mutations/problem?isFullScreen=true)
+**************************************
+def mutate_string(string,position,character):
+    string_list=list(string)
+    string_list[position]=character
+    return "".join(string_list)
+
+if __name__ == '__main__':
+    s = input()
+    i, c = input().split()
+    s_new = mutate_string(s, int(i), c)
+    print(s_new)
+============================================================================
+Hackerrank Prepare->Python->Find a string
+(https://www.hackerrank.com/challenges/find-a-string/problem?isFullScreen=true)
+**************************************
+def count_substring(string,sub_string):
+    counter=0
+    for x in range(len(string)):
+        if string[x:x+len(sub_string)]==sub_string:
+            counter+=1
+    return counter
+if __name__ == '__main__':
+    string = input().strip()
+    sub_string = input().strip()
+    
+    count = count_substring(string, sub_string)
+    print(count)
+============================================================================
+Hackerrank Prepare->Python->String Validators
+(https://www.hackerrank.com/challenges/string-validators/problem?isFullScreen=true)
+**************************************
+s=input()
+print(any([x.isalnum() for x in s]))
+print(any([x.isalpha() for x in s]))
+print(any([x.isdigit() for x in s]))
+print(any([x.islower() for x in s]))
+print(any([x.isupper() for x in s]))
+============================================================================
+Hackerrank Prepare->Python->String Formatting
+(https://www.hackerrank.com/challenges/python-string-formatting/problem?isFullScreen=true)
+**************************************
+def print_formatted(number):
+    binary_length=len(str(bin(number))[2:])
+    for n in range(1,number+1):
+        print(str(n).rjust(binary_length),str(oct(n))[2:].rjust(binary_length),str(hex(n))[2:].upper().rjust(binary_length),str(bin(n))[2:].rjust(binary_length))
+if __name__ == '__main__':
+    n = int(input())
+    print_formatted(n)
+============================================================================
+Hackerrank Prepare->Python->itertools.product()
+(https://www.hackerrank.com/challenges/itertools-product/problem?isFullScreen=true)
+**************************************
+from itertools import product
+a=map(int,input().split(" "))
+b=map(int,input().split(" "))
+print(*product(a,b))
+============================================================================
