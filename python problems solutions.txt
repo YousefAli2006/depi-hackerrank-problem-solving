@@ -207,3 +207,108 @@ for _ in range(t):
     except (ZeroDivisionError,ValueError) as e:
         print(f"Error Code: {e}")
 ============================================================================
+Hackerrank Prepare->Python->No Idea!
+(https://www.hackerrank.com/challenges/no-idea/problem?isFullScreen=true)
+**************************************
+n,m=map(int,input().split(" "))
+arr=list(map(int,input().split(" ")))
+A=set(map(int,input().split(" ")))
+B=set(map(int,input().split(" ")))
+happiness=0
+for i in arr:
+    if i in A:
+        happiness+=1
+    elif i in B:
+        happiness+=-1
+    else:
+        continue
+print(happiness)
+============================================================================
+Hackerrank Prepare->Python->Polar Coordinates
+(https://www.hackerrank.com/challenges/polar-coordinates/problem?isFullScreen=true)
+**************************************
+import cmath
+complex_number=complex(input())
+print(abs(complex_number))
+print(cmath.phase(complex_number))
+============================================================================
+Hackerrank Prepare->Python->Introduction to Sets
+(https://www.hackerrank.com/challenges/py-introduction-to-sets/problem?isFullScreen=true)
+**************************************
+def average(array):
+    return sum(set(array))/len(set(array))
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    result = average(arr)
+    print(result)
+============================================================================
+Hackerrank Prepare->Python->Symmetric Difference
+(https://www.hackerrank.com/challenges/symmetric-difference/problem?isFullScreen=true)
+**************************************
+m=int(input())
+set_m=set(map(int,input().split(" ")))
+n=int(input())
+set_n=set(map(int,input().split(" ")))
+print(*sorted(list(set_m^set_n)),sep="\n")
+============================================================================
+Hackerrank Prepare->Python->Set .symmetric_difference() Operation
+(https://www.hackerrank.com/challenges/py-set-symmetric-difference-operation/problem?isFullScreen=true)
+**************************************
+a=int(input())
+a_set=set(input().split(" "))
+b=int(input())
+b_set=set(input().split(" "))
+print(len(a_set.symmetric_difference(b_set)))
+============================================================================
+Hackerrank Prepare->Python->Set .union() Operation
+(https://www.hackerrank.com/challenges/py-set-union/problem?isFullScreen=true)
+**************************************
+a=int(input())
+a_set=set(input().split(" "))
+b=int(input())
+b_set=set(input().split(" "))
+print(len(a_set.union(b_set)))
+============================================================================
+Hackerrank Prepare->Python->Set .difference() Operation
+(https://www.hackerrank.com/challenges/py-set-difference-operation/problem?isFullScreen=true)
+**************************************
+a=int(input())
+a_set=set(input().split(" "))
+b=int(input())
+b_set=set(input().split(" "))
+print(len(a_set.difference(b_set)))
+============================================================================
+Hackerrank Prepare->Python->Set .intersection() Operation
+(https://www.hackerrank.com/challenges/py-set-intersection-operation/problem?isFullScreen=true)
+**************************************
+a=int(input())
+a_set=set(input().split(" "))
+b=int(input())
+b_set=set(input().split(" "))
+print(len(a_set.intersection(b_set)))
+============================================================================
+Hackerrank Prepare->Python->Set .add()
+(https://www.hackerrank.com/challenges/py-set-add/problem?isFullScreen=true)
+**************************************
+n=int(input())
+countries_set=set()
+for _ in range(n):
+    countries_set.add(input())
+print(len(countries_set))
+============================================================================
+Hackerrank Prepare->Python->Set .discard(), .remove() & .pop()
+(https://www.hackerrank.com/challenges/py-set-discard-remove-pop/problem?isFullScreen=true)
+**************************************
+n=int(input())
+s=set(map(int,input().split(" ")))
+for _ in range(int(input())):
+    command=input().split(" ")
+    if command[0]=="discard":
+        s.discard(int(command[1]))
+    elif command[0]=="remove":
+        s.remove(int(command[1]))
+    elif command[0]=="pop":
+        s.pop()
+print(sum(s))
+============================================================================
